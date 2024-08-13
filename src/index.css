@@ -1,0 +1,15 @@
+@font-face {
+  font-family: welcomeScreenFont;
+  src: url(./assets/fonts/NewAmsterdam-Regular.ttf);
+}
+
+@font-face {
+  font-family: cvFontNormal;
+  src: url(./assets/fonts/Arimo-Variable.ttf);
+}
+
+@font-face {
+  font-family: cvFontItalic;
+  src: url(./assets/fonts/Arimo-Italic.ttf);
+}
+

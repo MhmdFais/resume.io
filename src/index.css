@@ -13,3 +13,9 @@
   src: url(./assets/fonts/Arimo-Italic.ttf);
 }
 
+body{
+  background-image: url(./assets/photos/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

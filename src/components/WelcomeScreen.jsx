@@ -1,27 +1,32 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/WelsomeScreen.css';
 
-function WelcomeScreen(){
-
+function WelcomeScreen() {
     const [startButton, setStartButton] = useState(false);
+    const navigate = useNavigate();
 
-    return(
+    const handleStartClick = () => {
+        setStartButton(true);
+        navigate('/home');
+    };
+
+    return (
         <div className="welcomePageDiv">
             {startButton ? 
-              <></>
-              // redirec to dashboard
+              null 
             :
                 <div className="welcomeContentDiv">
                     <div className="welcomeTextDiv">
                         <p>Generate Your <span>CV</span> Here !!</p>
                     </div>
                     <div className="buttonDiv">
-                        <button onClick={() => setStartButton(true)}>Start </button>
+                        <button onClick={handleStartClick}>Start</button>
                     </div>
                 </div>
             }
         </div>
-    )
+    );
 }
 
 export default WelcomeScreen;

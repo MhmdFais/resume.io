@@ -35,3 +35,7 @@
     border-bottom: 0.8px solid var(--hoverBorderColor);
     transition: color 0.5s ease, transform 0.5s ease;
 }
+
+.contentDiv{
+    padding: 3vh 2vw;
+}

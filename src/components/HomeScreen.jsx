@@ -9,21 +9,21 @@ function HomeScreen() {
     const renderContent = () => {
         switch (currentSection) {
             case 'Personal':
-                return <h1>Personal Information Page</h1>;
+                return <></>;  // PERSONAL COMPONENT
             case 'Education':
-                return <h1>Education Information Page</h1>;
+                return <></>; // EDUCATION COMPONENT
             case 'Experience':
-                return <h1>Experience Information Page</h1>;
+                return <></>; // EXPERIENCE COMPONENT
             case 'Skills':
-                return <h1>Skills Information Page</h1>;
+                return <></>; // SKILLS COMPONENT
             case 'Projects':
-                return <h1>Projects Information Page</h1>;
+                return <></>; // PROJECTS COMPONENT
             case 'Contact':
-                return <h1>Contact Information Page</h1>;
+                return <></>; // CONTACT COMPONENT
             case 'View':
-                return <h1>View CV Page</h1>;
-            default:
-                return <h1>Welcome to Your CV Builder!</h1>;
+                return <></>; // VIEW COMPONENT
+            // default:
+            //     return <h1>Welcome to Your CV Builder!</h1>;
         }
     };
 

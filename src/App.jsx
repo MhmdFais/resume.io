@@ -1,9 +1,11 @@
-
+import WelcomeScreen from './components/WelcomeScreen'
 
 function App() {
-  return(<></>)
-
-  
+  return(
+    <>
+      <WelcomeScreen />
+    </>
+  )
 }
 
 export default App

@@ -1,7 +1,37 @@
+:root{
+    --navElementActiveColor: #cbd5e1;
+    --hoverBorderColor: #67e8f9;
+    --navElementColor: #94a3b8;
+}
+
 .navigationDiv{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1rem;
     padding: 2vh 2vw;
+}
+
+.navigationDiv button{
+    background-color: inherit;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-family: cvFontNormal;
+    cursor: pointer;
+    color: var(--navElementColor);
+    transition: color 0.5s ease, transform 0.5s ease, border-bottom-color 0.5s ease-in-out;
+}
+
+.navigationDiv button:hover{
+    border-bottom: 0.8px solid var(--hoverBorderColor);
+    color: var(--navElementActiveColor);
+    transition: color 0.5s ease, border-bottom-color 0.5s ease-out;
+}
+
+.navigationDiv button.activeNavItem {
+    transform: scale(1.1);
+    color: var(--navElementActiveColor);
+    border-bottom: 0.8px solid var(--hoverBorderColor);
+    transition: color 0.5s ease, transform 0.5s ease;
 }

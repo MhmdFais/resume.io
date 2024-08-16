@@ -15,6 +15,17 @@
     width: 75%;
     border-radius: 1rem;
     background-color: var(--div-bg-color);
+    transform: translateX(-100%);
+    animation: slide-in 0.7s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 

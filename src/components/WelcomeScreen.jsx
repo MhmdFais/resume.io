@@ -21,7 +21,7 @@ function WelcomeScreen() {
                         <p>Generate Your <span>CV</span> Here !!</p>
                     </div>
                     <div className="buttonDiv">
-                        <button onClick={handleStartClick}>Start</button>
+                        <button onClick={handleStartClick}>Let&apos;s Start</button>
                     </div>
                 </div>
             }

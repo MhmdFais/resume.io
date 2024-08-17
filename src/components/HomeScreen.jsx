@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../styles/HomeScreen.css';
 import PersonalInfo from '../components/PersonalInfo';
+import EducationInfo from '../components/EducationInfo';
 
 function HomeScreen() {
     const [currentSection, setCurrentSection] = useState('Personal');
@@ -12,7 +13,7 @@ function HomeScreen() {
             case 'Personal':
                 return <PersonalInfo />;  // PERSONAL COMPONENT
             case 'Education':
-                return <></>; // EDUCATION COMPONENT
+                return <EducationInfo />; // EDUCATION COMPONENT
             case 'Experience':
                 return <></>; // EXPERIENCE COMPONENT
             case 'Skills':

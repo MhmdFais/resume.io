@@ -1,0 +1,25 @@
+:root{
+    --input-field-bg: #0c0a09;
+    --div-border-color: #64748b;
+    --button-hover-color: #0983b3;
+    --button-hover-bg: #f8fafc;
+}
+
+.InformationDiv .InfoButton button{
+    padding: 0.5rem 4rem;
+    background-color: var(--input-field-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--div-border-color);
+}
+
+.InformationDiv .InfoButton{
+    padding-top: 2.5rem;
+}
+
+.InformationDiv .InfoButton button:hover{
+    color: var(--button-hover-color);
+}
+
+.InformationDiv .InfoButton button:active{
+    background-color: var(--button-hover-bg);
+}

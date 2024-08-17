@@ -1,4 +1,6 @@
 import { useState } from "react";
+import '../styles/EducationInfo.css'
+import '../styles/common/NextButton.css'
 
 function EducationInfo(){
     const [schools, setSchools] = useState([{ id: 1, schoolName: '', education: '', startDate: '', endDate: '' }]);
@@ -27,7 +29,7 @@ function EducationInfo(){
     };
 
     return (
-        <div className="educationInfoDiv">
+        <div className="educationInfoDiv InformationDiv">
             <form onSubmit={handleSubmit}>
                 {schools.map((school, index) => (
                     <div key={school.id} className="schoolInfoSet">
@@ -56,7 +58,7 @@ function EducationInfo(){
                             </div>
                         </div>
                         <div className="datesDiv">
-                            <div className="labelDiv">
+                            <div className="labelDiv dateLabelDiv">
                                 <label htmlFor={`startDate-${school.id}`}>Start Date</label>
                                 <input
                                     type="date"
@@ -67,7 +69,7 @@ function EducationInfo(){
                                     required
                                 />
                             </div>
-                            <div className="labelDiv">
+                            <div className="labelDiv dateLabelDiv">
                                 <label htmlFor={`endDate-${school.id}`}>End Date</label>
                                 <input
                                     type="date"
@@ -89,8 +91,8 @@ function EducationInfo(){
                         </div>
                     </div>
                 ))}
-                <div className="submitDiv">
-                    <button type="submit">Submit</button>
+                <div className="submitDiv buttonDiv InfoButton">
+                    <button type="submit">Next</button>
                 </div>
             </form>
         </div>

@@ -25,7 +25,7 @@ function PersonalInfo(){
     }
 
     return (
-        <div className="personalInfoDiv">
+        <div className="personalInfoDiv InformationDiv">
             <form onSubmit={submitHandle}>
                 <div className="firstName labelDiv">
                     <label htmlFor="firstName">First Name</label>

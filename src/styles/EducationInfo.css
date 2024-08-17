@@ -1,0 +1,40 @@
+:root{
+    --input-field-bg: #0c0a09;
+    --div-border-color: #64748b;
+    --button-hover-color: #0983b3;
+    --button-hover-bg: #f8fafc;
+}
+
+.schoolInfoSet{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.schoolInfoSet input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
+.addRemoveDiv button{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font: cvFontNormal;
+    padding: 0.5rem 2rem;
+    background-color: var(--input-field-bg);
+    color: white;
+    border: 1px solid var(--div-border-color);
+    border-radius: 0.5rem;
+}
+
+.educationInfoDiv .InfoButton button{
+    padding: 0.5rem 4rem;
+    background-color: var(--input-field-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--div-border-color);
+}
+
+.educationInfoDiv .InfoButton button:hover{
+    color: var(--button-hover-color);
+}
+
+.educationInfoDiv .InfoButton button:active{
+    background-color: var(--button-hover-bg);
+}

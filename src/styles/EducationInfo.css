@@ -3,6 +3,22 @@
     --div-border-color: #64748b;
     --button-hover-color: #0983b3;
     --button-hover-bg: #f8fafc;
+    --div-bg-color: #09090b;
+    --div-border-color: #64748b;
+}
+
+.educationInfoDiv{
+    transform: translateX(-100%);
+    animation: slide-in 0.7s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .schoolInfoSet{
@@ -14,14 +30,13 @@
     filter: invert(1);
 }
 
-.addRemoveDiv button{
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    font: cvFontNormal;
-    padding: 0.5rem 2rem;
-    background-color: var(--input-field-bg);
-    color: white;
+.schoolInfoSet{
+    background-color: var(--div-bg-color);
+    padding: 2rem;
+    width: 90%;
     border: 1px solid var(--div-border-color);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .educationInfoDiv .InfoButton button{
@@ -37,4 +52,11 @@
 
 .educationInfoDiv .InfoButton button:active{
     background-color: var(--button-hover-bg);
+}
+
+.educationInfoDiv .addRemoveDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }

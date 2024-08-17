@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../styles/EducationInfo.css'
 import '../styles/common/NextButton.css'
+import '../styles/common/AddRemoveButton.css'
 
 function EducationInfo(){
     const [schools, setSchools] = useState([{ id: 1, schoolName: '', education: '', startDate: '', endDate: '' }]);

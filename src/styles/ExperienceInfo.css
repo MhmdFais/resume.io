@@ -31,6 +31,10 @@
     margin-bottom: 1.5rem;
 }
 
+.experienceInfoSet input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
 .experienceInfoSet .upperPartDiv{
     display: flex;
     flex-direction: row;

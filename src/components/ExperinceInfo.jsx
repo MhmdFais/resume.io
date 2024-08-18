@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../styles/common/NextButton.css'
 import '../styles/common/AddRemoveButton.css'
+import '../styles/ExperienceInfo.css'
 
 function ExperienceInfo(){
 
@@ -84,7 +85,7 @@ function ExperienceInfo(){
                             </div>
                         </div>
                         <div className="lowerPartDiv">
-                            <div className="descriptionDiv">
+                            <div className="descriptionDiv labelDiv">
                                 <label htmlFor={`description-${experience.id}`}>Description</label>
                                 <textarea
                                     id={`description-${experience.id}`}

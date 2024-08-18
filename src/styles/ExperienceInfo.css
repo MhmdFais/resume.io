@@ -1,0 +1,61 @@
+:root{
+    --input-field-bg: #0c0a09;
+    --div-border-color: #64748b;
+    --div-bg-color: #09090b;
+    --input-border: #404040;
+}
+
+.experienceInfoDiv{
+    transform: translateX(-100%);
+    animation: slide-in 0.7s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.experienceInfoSet{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--div-bg-color);
+    padding: 2rem;
+    border: 1px solid var(--div-border-color);
+    border-radius: 1rem;
+    width: 90%;
+    margin-bottom: 1.5rem;
+}
+
+.experienceInfoSet .upperPartDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.lowerPartDiv{
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.experienceInfoSet .lowerPartDiv textarea{
+    background-color: var(--input-field-bg);
+    width: 97%;
+    height: 5rem;
+    border: 0.5px solid var(--input-border);
+    border-radius: 0.5rem;
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    position: 0.5rem;
+}
+
+.experienceInfoSet .addRemoveDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}

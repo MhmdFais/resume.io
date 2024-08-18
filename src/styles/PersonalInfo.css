@@ -8,13 +8,7 @@
     --div-border-color: #64748b;
 }
 
-.personalInfoDiv{
-    height: var(--div-height);
-    padding: 2rem;
-    border: 1px solid var(--div-border-color);
-    width: 75%;
-    border-radius: 1rem;
-    background-color: var(--div-bg-color);
+.InformationDiv{
     transform: translateX(-100%);
     animation: slide-in 0.7s ease-in-out forwards;
 }
@@ -28,6 +22,14 @@
     }
 }
 
+.personalInfoDiv{
+    height: var(--div-height);
+    padding: 2rem;
+    border: 1px solid var(--div-border-color);
+    width: 75%;
+    border-radius: 1rem;
+    background-color: var(--div-bg-color);
+}
 
 .labelDiv{
     display: flex;

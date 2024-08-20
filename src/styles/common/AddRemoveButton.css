@@ -5,6 +5,13 @@
     --button-hover-bg: #f8fafc;
 }
 
+.addRemoveDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
 .addRemoveDiv button{
     font-size: clamp(1.3rem, 2.3vw, 1.8rem);
     font-family: welcomeScreenFont;

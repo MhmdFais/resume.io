@@ -5,6 +5,20 @@
     --input-border: #404040;
 }
 
+.projectsInfoDiv{
+    transform: translateX(-100%);
+    animation: slide-in 0.7s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 
 .projectsInfoSet{
     display: flex;

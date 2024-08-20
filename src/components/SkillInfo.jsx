@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/common/NextButton.css'
 import '../styles/common/AddRemoveButton.css'
+import '../styles/SkillsInfo.css'
 
 function SkillInfo(){
 

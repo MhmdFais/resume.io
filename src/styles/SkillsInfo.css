@@ -1,0 +1,38 @@
+:root{
+    --div-border-color: #64748b;
+    --div-bg-color: #09090b;
+}
+
+.skillsInfoDiv{
+    transform: translateX(100%);
+    animation: slide-in 0.7s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.skillInfoSet{
+    background-color: var(--div-bg-color);
+    padding: 2rem;
+    border: 1px solid var(--div-border-color);
+    border-radius: 1rem;
+    width: 70%;
+    margin-bottom: 1.5rem;
+}
+
+.skillInputLabelDiv input{
+    width: 98%;
+}
+
+.skillInfoSet .addRemoveDiv{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}

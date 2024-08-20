@@ -55,6 +55,10 @@
     padding: 0.5rem;
 }
 
+.personInputDiv input{
+    width: 98%;
+}
+
 .personalInfoDiv .InfoButton button{
     padding: 0.5rem 4rem;
     background-color: var(--input-field-bg);

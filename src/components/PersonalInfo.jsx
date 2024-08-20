@@ -28,18 +28,18 @@ function PersonalInfo(){
         <div className="InformationDiv">
             <form onSubmit={submitHandle}>
                 <div className="personalInfoDiv">
-                <div className="firstName labelDiv">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" id="firstName" value={firstName} onChange={handleFirstNameChange} required />
-                </div>
-                <div className="lastName labelDiv">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" value={lastName} onChange={handleLastNameChange} required/>
-                </div>
-                <div className="address labelDiv">
-                    <label htmlFor="address">Address</label>
-                    <input type="text" id="address" value={address} onChange={handleAddressChange} required/>
-                </div>
+                    <div className="firstName labelDiv personInputDiv">
+                        <label htmlFor="firstName">First Name</label>
+                        <input type="text" id="firstName" value={firstName} onChange={handleFirstNameChange} required />
+                    </div>
+                    <div className="lastName labelDiv personInputDiv">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input type="text" id="lastName" value={lastName} onChange={handleLastNameChange} required/>
+                    </div>
+                    <div className="address labelDiv personInputDiv">
+                        <label htmlFor="address">Address</label>
+                        <input type="text" id="address" value={address} onChange={handleAddressChange} required/>
+                    </div>
                 </div>
                 <div className="buttonDiv InfoButton">
                     <button type="submit">Next</button>

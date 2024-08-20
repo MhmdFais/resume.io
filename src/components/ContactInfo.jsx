@@ -1,35 +1,28 @@
 import { useState } from 'react';
-import '../styles/common/NextButton.css'
-import '../styles/ContactInfo.css'
+import '../styles/common/NextButton.css';
+import '../styles/ContactInfo.css';
+import PropTypes from 'prop-types';
 
-function ContactInfo(){
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+function ContactInfo({ data, onSubmit }) {
+    const [email, setEmail] = useState(data.email || '');
+    const [phone, setPhone] = useState(data.phone || '');
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    }
-
-    const handlePhoneChange = (event) => {
-        setPhone(event.target.value);
-    }
-
-    const submitHandle = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(email, phone);
-    }
+        onSubmit({ email, phone });
+    };
 
-    return(
+    return (
         <div className="InformationDiv contactsInfoDiv">
-            <form onSubmit={submitHandle}>
+            <form onSubmit={handleSubmit}>
                 <div className="contactInfoSet">
                     <div className="labelDiv">
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" value={email} onChange={handleEmailChange} required/>
+                        <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                     </div>
                     <div className="labelDiv">
                         <label htmlFor="phone">Phone</label>
-                        <input type="tel" id="phone" value={phone} onChange={handlePhoneChange} required/>
+                        <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
                     </div>
                 </div>
                 <div className="buttonDiv InfoButton">
@@ -37,7 +30,12 @@ function ContactInfo(){
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
 export default ContactInfo;
+
+ContactInfo.propTypes = {
+    data: PropTypes.object.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}

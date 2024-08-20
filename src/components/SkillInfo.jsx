@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import '../styles/common/NextButton.css'
-import '../styles/common/AddRemoveButton.css'
-import '../styles/SkillsInfo.css'
+import '../styles/common/NextButton.css';
+import '../styles/common/AddRemoveButton.css';
+import '../styles/SkillsInfo.css';
+import PropTypes from 'prop-types';
 
-function SkillInfo(){
-
-    const [skills, setSkills] = useState([{id: 1, skill: ''}]);
+function SkillInfo({ data, onSubmit }) {
+    const [skills, setSkills] = useState(data.length > 0 ? data : [{ id: 1, skill: '' }]);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -27,20 +27,20 @@ function SkillInfo(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(skills);
+        onSubmit(skills);
     };
 
-    return(
+    return (
         <div className='InformationDiv skillsInfoDiv'>
             <form onSubmit={handleSubmit}>
                 {skills.map((skill, index) => (
                     <div key={skill.id} className="skillInfoSet">
                         <div className="labelDiv skillInputLabelDiv">
-                            <label htmlFor={`skill-${skill.id}`}></label>
+                            <label htmlFor={`skill-${skill.id}`}>Skill</label>
                             <input 
                                 type="text"
-                                id = {`skill-${skill.id}`}
-                                name = "skill"
+                                id={`skill-${skill.id}`}
+                                name="skill"
                                 value={skill.skill}
                                 onChange={(event) => handleChange(skill.id, event)}
                                 required
@@ -61,7 +61,12 @@ function SkillInfo(){
                 </div>
             </form>
         </div>
-    )
-
+    );
 }
+
 export default SkillInfo;
+
+SkillInfo.propTypes = {
+    data: PropTypes.array.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}

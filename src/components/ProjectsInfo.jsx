@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import '../styles/common/NextButton.css'
-import '../styles/common/AddRemoveButton.css'
-import '../styles/ProjectsInfo.css'
+import '../styles/common/NextButton.css';
+import '../styles/common/AddRemoveButton.css';
+import '../styles/ProjectsInfo.css';
+import PropTypes from 'prop-types';
 
-function ProjectsInfo(){
-
-    const [projects, setProjects] = useState([{id: 1, projectName: '', projectDescription: '', projectLink: ''}]);
+function ProjectsInfo({ data, onSubmit }) {
+    const [projects, setProjects] = useState(data.length > 0 ? data : [{ id: 1, projectName: '', projectDescription: '', projectLink: '' }]);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -27,10 +27,10 @@ function ProjectsInfo(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(projects);
+        onSubmit(projects);
     };
 
-    return(
+    return (
         <div className="InformationDiv projectsInfoDiv">
             <form onSubmit={handleSubmit}>
                 {projects.map((project, index) => (
@@ -39,9 +39,9 @@ function ProjectsInfo(){
                             <label htmlFor={`projectName-${project.id}`}>Name</label>
                             <input 
                                 type="text"
-                                id = {`projectName-${project.id}`}
-                                name = "projectName"
-                                value= {project.projectName}
+                                id={`projectName-${project.id}`}
+                                name="projectName"
+                                value={project.projectName}
                                 onChange={(event) => handleChange(project.id, event)}
                                 required
                             />
@@ -49,9 +49,9 @@ function ProjectsInfo(){
                         <div className="labelDiv">
                             <label htmlFor={`projectDescription-${project.id}`}>Description</label>
                             <textarea 
-                                id = {`projectDescription-${project.id}`}
-                                name = "description"
-                                value= {project.projectDescription}
+                                id={`projectDescription-${project.id}`}
+                                name="projectDescription"
+                                value={project.projectDescription}
                                 onChange={(event) => handleChange(project.id, event)}    
                                 required
                             />
@@ -59,9 +59,9 @@ function ProjectsInfo(){
                         <div className="labelDiv">
                             <label htmlFor={`projectLink-${project.id}`}>Link</label>
                             <input 
-                                type = "text"
-                                id = {`projectLink-${project.id}`}
-                                name = "link"
+                                type="text"
+                                id={`projectLink-${project.id}`}
+                                name="projectLink"
                                 value={project.projectLink}
                                 onChange={(event) => handleChange(project.id, event)}
                                 required
@@ -82,8 +82,12 @@ function ProjectsInfo(){
                 </div>
             </form>
         </div>
-    )
-
+    );
 }
 
 export default ProjectsInfo;
+
+ProjectsInfo.propTypes = {
+    data: PropTypes.array.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}

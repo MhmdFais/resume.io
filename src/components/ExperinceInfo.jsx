@@ -1,11 +1,11 @@
 import { useState } from "react";
-import '../styles/common/NextButton.css'
-import '../styles/common/AddRemoveButton.css'
-import '../styles/ExperienceInfo.css'
+import '../styles/common/NextButton.css';
+import '../styles/common/AddRemoveButton.css';
+import '../styles/ExperienceInfo.css';
+import PropTypes from 'prop-types';
 
-function ExperienceInfo(){
-
-    const [experiences, setExperiences] = useState([{ id: 1, companyName: '', position: '', startDate: '', endDate: '', description: '' }]);
+function ExperienceInfo({ data, onSubmit }) {
+    const [experiences, setExperiences] = useState(data.length > 0 ? data : [{ id: 1, companyName: '', position: '', startDate: '', endDate: '', description: '' }]);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -27,10 +27,10 @@ function ExperienceInfo(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(experiences);
+        onSubmit(experiences);
     };
 
-    return(
+    return (
         <div className="experienceInfoDiv InformationDiv">
             <form onSubmit={handleSubmit}>
                 {experiences.map((experience, index) => (
@@ -97,7 +97,7 @@ function ExperienceInfo(){
                             </div>
                         </div>
                         <div className="addRemoveDiv">
-                        {index > 0 && (
+                            {index > 0 && (
                                 <button type="button" onClick={() => removeExperience(experience.id)}>Remove</button>
                             )}
                             {index === experiences.length - 1 && (
@@ -111,8 +111,12 @@ function ExperienceInfo(){
                 </div>
             </form>
         </div>
-    )
-
+    );
 }
 
 export default ExperienceInfo;
+
+ExperienceInfo.propTypes = {
+    data: PropTypes.array.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}

@@ -5,31 +5,55 @@ import EducationInfo from '../components/EducationInfo';
 import ExperienceInfo from '../components/ExperinceInfo';
 import SkillInfo from '../components/SkillInfo';
 import ProjectsInfo from '../components/ProjectsInfo';
-import ContactInfo from '../components/ContactInfo'
+import ContactInfo from '../components/ContactInfo';
+import WelcomeScreen from '../components/WelcomeScreen'
+import CVView from '../components/CVView';
 
 function HomeScreen() {
     const [currentSection, setCurrentSection] = useState('Personal');
+    
+    // Centralized state for storing form data
+    const [cvData, setCvData] = useState({
+        personal: {},
+        education: [],
+        experience: [],
+        skills: [],
+        projects: [],
+        contact: {}
+    });
 
     const navigationElements = ['Personal', 'Education', 'Experience', 'Skills', 'Projects', 'Contact', 'View'];
+
+    const handleSectionSubmit = (sectionName, data) => {
+        setCvData(prevState => ({
+            ...prevState,
+            [sectionName]: data
+        }));
+        const nextSectionIndex = navigationElements.indexOf(sectionName) + 1;
+        if (nextSectionIndex < navigationElements.length) {
+            setCurrentSection(navigationElements[nextSectionIndex]);
+        }
+    };
 
     const renderContent = () => {
         switch (currentSection) {
             case 'Personal':
-                return <PersonalInfo />;  // PERSONAL COMPONENT
+                return <PersonalInfo data={cvData.personal} onSubmit={(data) => handleSectionSubmit('personal', data)} />;
             case 'Education':
-                return <EducationInfo />; // EDUCATION COMPONENT
+                return <EducationInfo data={cvData.education} onSubmit={(data) => handleSectionSubmit('education', data)} />;
             case 'Experience':
-                return <ExperienceInfo />; // EXPERIENCE COMPONENT
+                return <ExperienceInfo data={cvData.experience} onSubmit={(data) => handleSectionSubmit('experience', data)} />;
             case 'Skills':
-                return <SkillInfo />; // SKILLS COMPONENT
+                return <SkillInfo data={cvData.skills} onSubmit={(data) => handleSectionSubmit('skills', data)} />;
             case 'Projects':
-                return <ProjectsInfo />; // PROJECTS COMPONENT
+                return <ProjectsInfo data={cvData.projects} onSubmit={(data) => handleSectionSubmit('projects', data)} />;
             case 'Contact':
-                return <ContactInfo />; // CONTACT COMPONENT
+                return <ContactInfo data={cvData.contact} onSubmit={(data) => handleSectionSubmit('contact', data)} />;
             case 'View':
-                return <></>; // VIEW COMPONENT
-            // default:
-            //     return <h1>Welcome to Your CV Builder!</h1>;
+                return <CVView cvData={cvData} />;
+                //return <></>;
+            default:
+                return <WelcomeScreen />;
         }
     };
 

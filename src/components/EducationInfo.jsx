@@ -1,10 +1,11 @@
 import { useState } from "react";
-import '../styles/EducationInfo.css'
-import '../styles/common/NextButton.css'
-import '../styles/common/AddRemoveButton.css'
+import '../styles/EducationInfo.css';
+import '../styles/common/NextButton.css';
+import '../styles/common/AddRemoveButton.css';
+import PropTypes from 'prop-types';
 
-function EducationInfo(){
-    const [schools, setSchools] = useState([{ id: 1, schoolName: '', education: '', startDate: '', endDate: '' }]);
+function EducationInfo({ data, onSubmit }) {
+    const [schools, setSchools] = useState(data.length > 0 ? data : [{ id: 1, schoolName: '', education: '', startDate: '', endDate: '' }]);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -26,7 +27,7 @@ function EducationInfo(){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(schools);
+        onSubmit(schools);
     };
 
     return (
@@ -101,3 +102,8 @@ function EducationInfo(){
 }
 
 export default EducationInfo;
+
+EducationInfo.propTypes = {
+    data: PropTypes.array.isRequired,
+    onSubmit: PropTypes.func.isRequired
+}

@@ -3,6 +3,7 @@ import '../styles/HomeScreen.css';
 import PersonalInfo from '../components/PersonalInfo';
 import EducationInfo from '../components/EducationInfo';
 import ExperienceInfo from '../components/ExperinceInfo';
+import SkillInfo from '../components/SkillInfo';
 
 function HomeScreen() {
     const [currentSection, setCurrentSection] = useState('Personal');
@@ -18,7 +19,7 @@ function HomeScreen() {
             case 'Experience':
                 return <ExperienceInfo />; // EXPERIENCE COMPONENT
             case 'Skills':
-                return <></>; // SKILLS COMPONENT
+                return <SkillInfo />; // SKILLS COMPONENT
             case 'Projects':
                 return <></>; // PROJECTS COMPONENT
             case 'Contact':

@@ -5,6 +5,7 @@ import EducationInfo from '../components/EducationInfo';
 import ExperienceInfo from '../components/ExperinceInfo';
 import SkillInfo from '../components/SkillInfo';
 import ProjectsInfo from '../components/ProjectsInfo';
+import ContactInfo from '../components/ContactInfo'
 
 function HomeScreen() {
     const [currentSection, setCurrentSection] = useState('Personal');
@@ -24,7 +25,7 @@ function HomeScreen() {
             case 'Projects':
                 return <ProjectsInfo />; // PROJECTS COMPONENT
             case 'Contact':
-                return <></>; // CONTACT COMPONENT
+                return <ContactInfo />; // CONTACT COMPONENT
             case 'View':
                 return <></>; // VIEW COMPONENT
             // default:

@@ -92,7 +92,6 @@ function ExperienceInfo({ data, onSubmit }) {
                                     name="description"
                                     value={experience.description}
                                     onChange={(event) => handleChange(experience.id, event)}
-                                    required
                                 />
                             </div>
                         </div>

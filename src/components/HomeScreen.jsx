@@ -29,10 +29,10 @@ function HomeScreen() {
             ...prevState,
             [sectionName]: data
         }));
-        const nextSectionIndex = navigationElements.indexOf(sectionName) + 1;
-        if (nextSectionIndex < navigationElements.length) {
-            setCurrentSection(navigationElements[nextSectionIndex]);
-        }
+        // const nextSectionIndex = navigationElements.indexOf(sectionName) + 1;
+        // if (nextSectionIndex < navigationElements.length) {
+        //     setCurrentSection(navigationElements[nextSectionIndex]);
+        // }
     };
 
     const renderContent = () => {

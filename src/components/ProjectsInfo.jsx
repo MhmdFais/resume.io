@@ -53,7 +53,6 @@ function ProjectsInfo({ data, onSubmit }) {
                                 name="projectDescription"
                                 value={project.projectDescription}
                                 onChange={(event) => handleChange(project.id, event)}    
-                                required
                             />
                         </div>
                         <div className="labelDiv">
@@ -64,7 +63,6 @@ function ProjectsInfo({ data, onSubmit }) {
                                 name="projectLink"
                                 value={project.projectLink}
                                 onChange={(event) => handleChange(project.id, event)}
-                                required
                             />
                         </div>
                         <div className="addRemoveDiv">

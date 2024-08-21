@@ -1,0 +1,10 @@
+:root{
+    --cv-bg-color: white;
+    --cv-heading-color: #0284c7;
+}
+
+.cvViewDiv img{
+    filter: invert(1);
+    height: auto;
+    width: 1.5vw;
+}

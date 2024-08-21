@@ -6,10 +6,12 @@ function PersonalInfo({ data, onSubmit }) {
     const [firstName, setFirstName] = useState(data.firstName || '');
     const [lastName, setLastName] = useState(data.lastName || '');
     const [address, setAddress] = useState(data.address || '');
+    const [isSaved, setIsSaved] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit({ firstName, lastName, address });
+        setIsSaved(true);
     };
 
     return (
@@ -30,7 +32,7 @@ function PersonalInfo({ data, onSubmit }) {
                     </div>
                 </div>
                 <div className="buttonDiv InfoButton">
-                    <button type="submit">Next</button>
+                    <button type="submit">{isSaved ? "Saved" : "Save"}</button>
                 </div>
             </form>
         </div>

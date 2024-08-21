@@ -6,10 +6,12 @@ import PropTypes from 'prop-types';
 function ContactInfo({ data, onSubmit }) {
     const [email, setEmail] = useState(data.email || '');
     const [phone, setPhone] = useState(data.phone || '');
+    const [isSaved, setIsSaved] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit({ email, phone });
+        setIsSaved(true);
     };
 
     return (
@@ -26,7 +28,7 @@ function ContactInfo({ data, onSubmit }) {
                     </div>
                 </div>
                 <div className="buttonDiv InfoButton">
-                    <button type="submit">Next</button>
+                    <button type="submit">{isSaved ? "Saved" : "Save"}</button>
                 </div>
             </form>
         </div>

@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 function ExperienceInfo({ data, onSubmit }) {
     const [experiences, setExperiences] = useState(data.length > 0 ? data : [{ id: 1, companyName: '', position: '', startDate: '', endDate: '', description: '' }]);
+    const [isSaved, setIsSaved] = useState(false);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -28,6 +29,7 @@ function ExperienceInfo({ data, onSubmit }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit(experiences);
+        setIsSaved(true)
     };
 
     return (
@@ -106,7 +108,7 @@ function ExperienceInfo({ data, onSubmit }) {
                     </div>
                 ))}
                 <div className="submitDiv buttonDiv InfoButton">
-                    <button type="submit">Next</button>
+                    <button type="submit">{isSaved ? "Saved" : "Save"}</button>
                 </div>
             </form>
         </div>

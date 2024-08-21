@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 function SkillInfo({ data, onSubmit }) {
     const [skills, setSkills] = useState(data.length > 0 ? data : [{ id: 1, skill: '' }]);
+    const [isSaved, setIsSaved] = useState(false);
 
     const handleChange = (id, event) => {
         const { name, value } = event.target;
@@ -28,6 +29,7 @@ function SkillInfo({ data, onSubmit }) {
     const handleSubmit = (event) => {
         event.preventDefault();
         onSubmit(skills);
+        setIsSaved(true);
     };
 
     return (
@@ -57,7 +59,7 @@ function SkillInfo({ data, onSubmit }) {
                     </div>
                 ))}
                 <div className="submitDiv buttonDiv InfoButton">
-                    <button type="submit">Next</button>
+                    <button type="submit">{isSaved ? "Saved" : "Save"}</button>
                 </div>
             </form>
         </div>

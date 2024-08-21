@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import '../styles/CVView.css';
 import PropTypes from 'prop-types';
-import Email from '../assets/photos/email.png'
-import Phone from '../assets/photos/call.png'
-import Location from '../assets/photos/location.png'
+import Email from '../assets/photos/email.png';
+import Phone from '../assets/photos/call.png';
+import Location from '../assets/photos/location.png';
 
 function CVView({ cvData }) {
     const { personal, education, experience, skills, projects, contact } = cvData;
@@ -14,14 +16,27 @@ function CVView({ cvData }) {
     const handlePrint = useReactToPrint({
         content: () => componentRef.current,
         documentTitle: "My_CV",  
+        onAfterPrint: () => downloadPDF(),
     });
+
+    const downloadPDF = async () => {
+        const input = componentRef.current;
+        const canvas = await html2canvas(input);
+        const imgData = canvas.toDataURL('image/png');
+    
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = pdf.internal.pageSize.getHeight();
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('My_CV.pdf');
+      };
 
     return (
         <div className='CVViewInfo' >
             <div className="buttonDiv downloadButton">
                 <button onClick={handlePrint}>Download as PDF</button>
             </div>
-            <div className="cvViewDiv">
+            <div className="cvViewDiv" ref={componentRef}>
                 <section className='header'>
                     <div className="upperPart">
                         <h2>{personal.firstName} {personal.lastName}</h2>

@@ -13,7 +13,7 @@
 
 ## Demo
 
-Check out the live version of the project [here](https://resume-io-theta.vercel.app/)
+Check out the live version of the project [here](https://resume-io-theta.vercel.app/home)
 
 ## Tech Stack
 
